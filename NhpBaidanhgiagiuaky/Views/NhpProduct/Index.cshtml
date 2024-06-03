@@ -1,13 +1,13 @@
-﻿@model IEnumerable<NhpBaidanhgiagiuaky.Models.NhpProduct>
+﻿﻿@model IEnumerable<NhpBaidanhgiagiuaky.Models.NhpProduct>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "NhpProduct";
 }
 
-<h2>Nguyen Huu Phuc</h2>
+<h2>Le Tuan Tinh - Products</h2>
 
 <p>
-    @Html.ActionLink("Create New", "NhpCreate")
+    @Html.ActionLink("Create New Products", "NhpCreate")
 </p>
 <table class="table">
     <tr>
@@ -32,32 +32,33 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nhpId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nhpName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nhpImage)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nhpQuantity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nhpPrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nhpIsActive)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nhpId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nhpName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nhpImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nhpQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nhpPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nhpIsActive)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "nhpEdit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "nhpDetail", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "nhpDelete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
 
 </table>

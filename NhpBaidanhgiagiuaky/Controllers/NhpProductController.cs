@@ -1,18 +1,19 @@
-﻿using System;
+﻿using NhpBaidanhgiagiuaky.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using NhpBaidanhgiagiuaky.Models;
 
 namespace NhpBaidanhgiagiuaky.Controllers
 {
     public class NhpProductController : Controller
     {
-        private static List<NhpProductController> NhpProducts = new List<NhpProductController>()
+        private static List<NhpProduct> NhpProducts = new List<NhpProduct>()
 {
-             new NhpProductController{nhpId=204, nhpName="Banh Bao", nhpImage="../Images/Anhbanhbao.png", nhpQuantity=24,nhpPrice=10000,nhpIsActive=true},
-             new NhpProductController{nhpId=202, nhpName="Banh Ca", nhpImage="../Images/Anhbanhca.png", nhpQuantity=14,nhpPrice=12000,nhpIsActive=true}
+             new NhpProduct{nhpId=204, nhpName="Banh Bao", nhpImage="../Images/Anhbanhbao.png", nhpQuantity=24,nhpPrice=10000,nhpIsActive=true},
+             new NhpProduct{nhpId=202, nhpName="Banh Ca", nhpImage="../Images/Anhbanhca.png", nhpQuantity=14,nhpPrice=12000,nhpIsActive=true}
 };
         // GET: NhpProduct
         public ActionResult Index()
@@ -28,14 +29,14 @@ namespace NhpBaidanhgiagiuaky.Controllers
 
         //Post: Create Products
         [HttpPost]
-        public ActionResult NhpCreate(NhpProductController NhpProduct)
+        public ActionResult NhpCreate(NhpProduct nhpProduct)
         {
             if (!ModelState.IsValid)
             {
-                return View(NhpProduct);
+                return View(nhpProduct);
             }
 
-            NhpProduct.Add(NhpProduct);
+            NhpProducts.Add(nhpProduct);
             return RedirectToAction("Index");
         }
     }
