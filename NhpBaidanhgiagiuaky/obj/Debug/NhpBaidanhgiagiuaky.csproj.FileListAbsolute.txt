@@ -1,0 +1,2 @@
+E:\ASPNET\NhpBaidanhgiagiuaky\NhpBaidanhgiagiuaky\obj\Debug\NhpBaidanhgiagiuaky.csproj.AssemblyReference.cache
+E:\ASPNET\NhpBaidanhgiagiuaky\NhpBaidanhgiagiuaky\obj\Debug\NhpBaidanhgiagiuaky.csproj.CoreCompileInputs.cache
